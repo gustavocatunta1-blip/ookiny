@@ -25,7 +25,18 @@ botonReservar.addEventListener("click", function() {
 
   if (puedeReservar(tazasActuales)) {
     contadorTazas.textContent = tazasActuales - 1;
+    console.log("Reserva registrada");
+    if (tazasActuales - 1 === 0) {
+
+    console.log("No hay cupos disponibles");
+
+    botonReservar.textContent = "Sin cupos";
+
+    botonReservar.disabled = true;
+
+}
   } else {
+    console.log("No HAY CUPOS DISPONIBLES");
     botonReservar.textContent = "Sin cupos";
     botonReservar.disabled = true;
   }
